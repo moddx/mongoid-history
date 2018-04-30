@@ -36,7 +36,7 @@ describe Mongoid::History::Tracker do
         include Mongoid::Document
         include Mongoid::History::Trackable
         store_in collection: :model_ones
-        embeds_many :emb_ones, inverse_class_name: 'EmbOne'
+        embeds_many :emb_ones, class_name: 'EmbOne'
       end
 
       EmbOne = Class.new do

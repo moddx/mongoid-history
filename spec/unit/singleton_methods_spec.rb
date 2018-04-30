@@ -8,9 +8,9 @@ describe Mongoid::History::Trackable do
         include Mongoid::History::Trackable
         field :foo
         field :b, as: :bar
-        embeds_one :my_embed_one_model, inverse_class_name: 'MyEmbedOneModel'
-        embeds_one :my_untracked_embed_one_model, inverse_class_name: 'MyUntrackedEmbedOneModel'
-        embeds_many :my_embed_many_models, inverse_class_name: 'MyEmbedManyModel'
+        embeds_one :my_embed_one_model, class_name: 'MyEmbedOneModel'
+        embeds_one :my_untracked_embed_one_model, class_name: 'MyUntrackedEmbedOneModel'
+        embeds_many :my_embed_many_models, class_name: 'MyEmbedManyModel'
       end
 
       MyEmbedOneModel = Class.new do
@@ -90,7 +90,7 @@ describe Mongoid::History::Trackable do
               include Mongoid::Document
               include Mongoid::History::Trackable
               store_in collection: :my_models
-              embeds_one :emb_one, inverse_class_name: 'EmbOne', store_as: :emo
+              embeds_one :emb_one, class_name: 'EmbOne', store_as: :emo
               track_history
             end
           end
@@ -107,7 +107,7 @@ describe Mongoid::History::Trackable do
               include Mongoid::Document
               include Mongoid::History::Trackable
               store_in collection: :my_models
-              embeds_many :emb_ones, inverse_class_name: 'EmbOne'
+              embeds_many :emb_ones, class_name: 'EmbOne'
               track_history
             end
           end
@@ -124,7 +124,7 @@ describe Mongoid::History::Trackable do
               include Mongoid::Document
               include Mongoid::History::Trackable
               store_in collection: :my_models
-              embeds_many :emb_ones, inverse_class_name: 'EmbOne', store_as: :emos
+              embeds_many :emb_ones, class_name: 'EmbOne', store_as: :emos
               track_history
             end
           end
@@ -171,9 +171,9 @@ describe Mongoid::History::Trackable do
         ModelOne = Class.new do
           include Mongoid::Document
           include Mongoid::History::Trackable
-          embeds_one :emb_one, inverse_class_name: 'EmbOne'
-          embeds_one :emb_two, store_as: :emt, inverse_class_name: 'EmbTwo'
-          embeds_one :emb_three, inverse_class_name: 'EmbThree'
+          embeds_one :emb_one, class_name: 'EmbOne'
+          embeds_one :emb_two, store_as: :emt, class_name: 'EmbTwo'
+          embeds_one :emb_three, class_name: 'EmbThree'
         end
 
         EmbOne = Class.new do
@@ -240,9 +240,9 @@ describe Mongoid::History::Trackable do
         ModelOne = Class.new do
           include Mongoid::Document
           include Mongoid::History::Trackable
-          embeds_many :emb_ones, inverse_class_name: 'EmbOne'
-          embeds_many :emb_twos, store_as: :emts, inverse_class_name: 'EmbTwo'
-          embeds_many :emb_threes, inverse_class_name: 'EmbThree'
+          embeds_many :emb_ones, class_name: 'EmbOne'
+          embeds_many :emb_twos, store_as: :emts, class_name: 'EmbTwo'
+          embeds_many :emb_threes, class_name: 'EmbThree'
         end
 
         EmbOne = Class.new do
