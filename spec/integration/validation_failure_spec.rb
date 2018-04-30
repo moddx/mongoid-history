@@ -12,7 +12,7 @@ describe Mongoid::History::Tracker do
 
       validates :title, presence: true
 
-      has_many :items, dependent: :restrict
+      has_many :items, dependent: :restrict_with_error
 
       track_history on: [:body], track_create: true, track_update: true, track_destroy: true
     end
