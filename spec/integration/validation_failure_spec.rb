@@ -12,7 +12,11 @@ describe Mongoid::History::Tracker do
 
       validates :title, presence: true
 
-      has_many :items, dependent: :restrict_with_error
+      if (ENV['MONGOID_VERSION'].to_i || 6) >= 7
+        has_many :items, dependent: :restrict_with_error
+      else
+        has_many :items, dependent: :restrict
+      end
 
       track_history on: [:body], track_create: true, track_update: true, track_destroy: true
     end
