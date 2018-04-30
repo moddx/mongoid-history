@@ -366,6 +366,7 @@ module Mongoid
         def relation_aliases
           @relation_aliases ||= relations.inject(HashWithIndifferentAccess.new) do |h, (k, v)|
             h[k] = k
+            k = v[:store_as]
             h[v[:store_as] || k] = k
             h
           end
