@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.post_install_message = File.read('UPGRADING') if File.exist?('UPGRADING')
 
   s.add_runtime_dependency 'easy_diff'
-  s.add_runtime_dependency 'mongoid', '>= 3.0'
+  s.add_runtime_dependency 'mongoid', '>= 3.0', '<= 7.0.0'
   s.add_runtime_dependency 'mongoid-compatibility', '>= 0.5.1'
   s.add_runtime_dependency 'activesupport'
 end

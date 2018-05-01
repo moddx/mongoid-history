@@ -365,8 +365,10 @@ module Mongoid
         # @return [ Hash < String, String > ] hash of embedded aliases (keys) to database representations (values)
         def relation_aliases
           @relation_aliases ||= relations.inject(HashWithIndifferentAccess.new) do |h, (k, v)|
-            h[k] = k
-            k = v[:store_as]
+            # accessing v with [] is the problem
+            if v.store_as?
+              h[v.store_as] = k
+            end
             h[v[:store_as] || k] = k
             h
           end
