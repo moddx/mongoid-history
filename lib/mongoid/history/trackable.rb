@@ -368,6 +368,8 @@ module Mongoid
             # accessing v with [] is the problem
             if v.store_as?
               h[v.store_as] = k
+              h[v.store_as] = k
+              h[v.store_as] = k
             end
             h[v[:store_as] || k] = k
             h
