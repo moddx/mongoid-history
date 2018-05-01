@@ -300,6 +300,7 @@ module Mongoid
       end
 
       module RelationMethods
+        include Mongoid::Composable
         # Returns a relation class for the given field.
         #
         # @param [ String | Symbol ] field The name of the field.
