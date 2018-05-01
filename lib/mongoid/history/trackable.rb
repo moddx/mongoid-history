@@ -319,7 +319,6 @@ module Mongoid
           puts 'LOOKHERE' + relation_of(field).to_s
           puts 'LOOKHERE' + relation_of(field).class.to_s
           relation_of(field) == Mongoid::Association::Embedded::EmbedsOne
-          #relation_of(field) == Mongoid::Relations::Embedded::One
         end
 
         # Indicates whether there is an Embedded::Many relation for the given embedded field.
