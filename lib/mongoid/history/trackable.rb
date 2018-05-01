@@ -300,7 +300,6 @@ module Mongoid
       end
 
       module RelationMethods
-        include Mongoid::Composable
         # Returns a relation class for the given field.
         #
         # @param [ String | Symbol ] field The name of the field.
@@ -317,7 +316,8 @@ module Mongoid
         #
         # @return [ Boolean ] true if there is an Embedded::One relation for the given embedded field.
         def embeds_one?(field)
-          relation_of(field) == Mongoid::Relations::Embedded::One
+          relation_of(field).is_a?(Mongoid::Relations::Embedded::One)
+          #relation_of(field) == Mongoid::Relations::Embedded::One
         end
 
         # Indicates whether there is an Embedded::Many relation for the given embedded field.
