@@ -38,7 +38,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
@@ -71,7 +71,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
@@ -104,7 +104,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
@@ -141,7 +141,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
@@ -178,7 +178,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
@@ -213,7 +213,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, store_as: :eoo, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, store_as: :eoo, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
@@ -246,7 +246,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, store_as: :eoo, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, store_as: :eoo, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
@@ -278,7 +278,7 @@ describe Mongoid::History::Attributes::Create do
             include Mongoid::Document
             include Mongoid::History::Trackable
             store_in collection: :model_twos
-            embeds_one :emb_one_one, store_as: :eoo, class_name: 'EmbOneOne'
+            embeds_one :emb_one_one, store_as: :eoo, inverse_class_name: 'EmbOneOne'
           end
 
           class EmbOneOne
