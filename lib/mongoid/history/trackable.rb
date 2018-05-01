@@ -316,8 +316,8 @@ module Mongoid
         #
         # @return [ Boolean ] true if there is an Embedded::One relation for the given embedded field.
         def embeds_one?(field)
-          puts "LOOKHERE" + relation_of(field)
-          puts "LOOKHERE" + relation_of(field).class
+          puts 'LOOKHERE' + relation_of(field)
+          puts 'LOOKHERE' + relation_of(field).class
           relation_of(field) == Mongoid::Relations::Embedded::One
         end
 
