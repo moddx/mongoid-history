@@ -366,12 +366,7 @@ module Mongoid
         def relation_aliases
           @relation_aliases ||= relations.inject(HashWithIndifferentAccess.new) do |h, (k, v)|
             # accessing v with [] is the problem
-            if v.store_as
-              h[v.store_as] = k
-              h[v.store_as] = k
-              h[v.store_as] = k
-            end
-            h[v[:store_as] || k] = k
+            h[v.store_as || k] = k
             h
           end
         end
